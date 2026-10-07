@@ -2,8 +2,28 @@ name: "Wotan Exchange"
 description: "Wotan Forest Exchange EWS MCP bridge for ChatGPT"
 version: "0.1.0"
 slug: "wotan_exchange"
+
 arch:
   - aarch64
+
 startup: application
 boot: auto
 init: false
+
+options:
+  ews_url: "https://mail.agrofert.cz/EWS/Exchange.asmx"
+  ews_username: "DOMLAS\\barta"
+  ews_password: ""
+  company_domain: "wotan.cz"
+  timezone: "Europe/Prague"
+  tunnel_id: ""
+  control_plane_api_key: ""
+
+schema:
+  ews_url: str
+  ews_username: str
+  ews_password: password
+  company_domain: str
+  timezone: str
+  tunnel_id: str
+  control_plane_api_key: password
