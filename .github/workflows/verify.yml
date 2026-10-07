@@ -1,0 +1,36 @@
+name: Verify ARM64 app (no secrets)
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    paths:
+      - wotan_exchange/**
+      - tests/**
+      - .github/workflows/verify.yml
+permissions:
+  contents: read
+jobs:
+  arm64:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-qemu-action@v3
+      - uses: docker/setup-buildx-action@v3
+      - name: Shell syntax
+        run: sh -n wotan_exchange/run.sh
+      - name: Build ARM64 image
+        run: docker buildx build --platform linux/arm64 --load -t wotan-test ./wotan_exchange
+      - name: Real stdio tool discovery in ARM64 container
+        run: >-
+          docker run --rm --platform linux/arm64
+          -v "$PWD/tests:/tests:ro"
+          --entrypoint python wotan-test /tests/stdio_smoke.py
+      - name: Dummy credential adapter in ARM64 container
+        run: |
+          mkdir -p test-data
+          python3 - <<'PY'
+          import json,pathlib
+          options=dict(ews_url='https://mail.example.invalid/EWS/Exchange.asmx',ews_username='TEST\\dummy',ews_password='dummy-ci-only',primary_email='dummy@example.invalid',company_domain='example.invalid',timezone='Europe/Prague',mode='preflight')
+          pathlib.Path('test-data/options.json').write_text(json.dumps(options))
+          PY
+          docker run --rm --platform linux/arm64 -v "$PWD/test-data:/data" --entrypoint python wotan-test -c "from launcher import prepare; prepare(); from exchange_ews_mcp.credentials import get_password; assert get_password('TEST\\dummy') == 'dummy-ci-only'; from exchange_ews_mcp.service import configured_client; configured_client(); print('PASS dummy adapter and upstream EWS client construction')"
