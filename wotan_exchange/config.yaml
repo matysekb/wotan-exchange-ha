@@ -1,0 +1,9 @@
+name: "Wotan Exchange"
+description: "Wotan Forest Exchange EWS MCP bridge for ChatGPT"
+version: "0.1.0"
+slug: "wotan_exchange"
+arch:
+  - aarch64
+startup: application
+boot: auto
+init: false
