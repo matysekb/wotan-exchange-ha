@@ -1,0 +1,65 @@
+{
+  "base_commit": "c7b4fb71dea88062ed4e4cc7051e75b7e9bca714",
+  "changes": [
+    {
+      "path": ".github/workflows/verify.yml",
+      "base_sha256": "21e04233ea353983000fc948d006fe822fc6000ea479dc6481926c26caf51634",
+      "sha256": "b678379f3a7a5638ce22bab75a86d51d0cc2a63652c2f2dc871dc405b746e1ed"
+    },
+    {
+      "path": "README.md",
+      "base_sha256": "5a4bd6bb492a6106f3708cd71e8ec0b79fffccea743508e8f17cde8ca1afa103",
+      "sha256": "cc7685ad86b6b511dddd446243dfe801cb7155c7d16cc95d2137f8bd744979f9"
+    },
+    {
+      "path": "tests/stdio_smoke.py",
+      "base_sha256": "60c6cc8c0cf0f4b37577c51a206a11dc73f491d44180456027cdbd64dd02954e",
+      "sha256": "5880e9ae63135c53499c78b5b5350cf729942b62c332e159971dd6219654caff"
+    },
+    {
+      "path": "tests/test_mail_folders.py",
+      "base_sha256": null,
+      "sha256": "a8bd4e40baaf0cc32b98a06bcf9215d45535a00273f4c0bcc20290b5510fe21b"
+    },
+    {
+      "path": "UPGRADE-0.3.0.md",
+      "base_sha256": null,
+      "sha256": "a582aa42ae6c2530bfa48bf0496d8c6427d13203550d39b5ea48ac29fe89081e"
+    },
+    {
+      "path": "wotan_exchange/CHANGELOG.md",
+      "base_sha256": "42090b3948b30ec5a6658e21c729df685326fd5e161d630afc31a90cda00abee",
+      "sha256": "259c194cbd04d69755ef0aa1ca820e2d5e5348ae76ca6727a1b7d848df5c55d6"
+    },
+    {
+      "path": "wotan_exchange/config.yaml",
+      "base_sha256": "03cb53ee7befb7ae667f297a323240779c8c9f97540e19976ad9bd8cba38cd52",
+      "sha256": "04037948b929b90ee4e488228f8cc22d6d7aa9c28bf32a3f9ca8f0277a235a30"
+    },
+    {
+      "path": "wotan_exchange/Dockerfile",
+      "base_sha256": "fb0b32fd8e92363b5c564196f8203178902a7def5607584ac666f09ddd939822",
+      "sha256": "4c5ae329fe217bae58563173c483a1d26fcfc4c53d8c6fd893cef82969592e63"
+    },
+    {
+      "path": "wotan_exchange/vendor/exchange-ews-mcp/src/exchange_ews_mcp/ews.py",
+      "base_sha256": "b8e387fda3d056bed3a06a9f32127b2aaebd25cbfd4df87b2c77245d0be68ac3",
+      "sha256": "56d4c8c7dd9e25f27b9cf44f002aca30c616f168b0f3cfb8cd48a0169d21b44c"
+    },
+    {
+      "path": "wotan_exchange/vendor/exchange-ews-mcp/src/exchange_ews_mcp/server.py",
+      "base_sha256": "3176157e6ff314dbfe40575427ac8a771d4120adfa9dea36b0fda74e6017fd73",
+      "sha256": "ef8eec07c08548c492a133e57ab821ad6734dc982a7308e672b1e57e709efd7b"
+    },
+    {
+      "path": "wotan_exchange/vendor/exchange-ews-mcp/src/exchange_ews_mcp/tool_profiles.py",
+      "base_sha256": "fcb7674dcb0203e448ec1116a10c5ed228ee72d91c6404d7f5bfbde8a6aa4429",
+      "sha256": "dce0a0f882bcadaa585e66a564279cb80d1c95b1b831dd6d3dbe5376e11b6fbe"
+    },
+    {
+      "path": "wotan_exchange/vendor/exchange-ews-mcp/src/exchange_ews_mcp/xml_builder.py",
+      "base_sha256": "aff277bfc395446dff84d72f2fab4f243a0d08d77c70569e5e35942330bcf38a",
+      "sha256": "805d2dd32f21709af088861ba566671540940340e71b2a40af0c7c896d538669"
+    }
+  ]
+}
