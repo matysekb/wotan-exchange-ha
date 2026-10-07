@@ -1,29 +1,33 @@
-name: "Wotan Exchange"
-description: "Wotan Forest Exchange EWS MCP bridge for ChatGPT"
-version: "0.1.0"
-slug: "wotan_exchange"
-
+name: Wotan Exchange
+description: Exchange EWS MCP through the official OpenAI Secure MCP Tunnel
+version: "0.2.0"
+slug: wotan_exchange
 arch:
   - aarch64
-
 startup: application
-boot: auto
-init: false
-
+boot: manual
+init: true
+stage: experimental
+backup: cold
+timeout: 30
+url: https://github.com/matysekb/wotan-exchange-ha
 options:
-  ews_url: "https://mail.agrofert.cz/EWS/Exchange.asmx"
-  ews_username: "DOMLAS\\barta"
+  ews_url: https://mail.agrofert.cz/EWS/Exchange.asmx
+  ews_username: 'DOMLAS\barta'
   ews_password: ""
-  company_domain: "wotan.cz"
-  timezone: "Europe/Prague"
+  primary_email: martin.barta@wotan.cz
+  company_domain: wotan.cz
+  timezone: Europe/Prague
+  mode: preflight
   tunnel_id: ""
   control_plane_api_key: ""
-
 schema:
-  ews_url: str
+  ews_url: url
   ews_username: str
   ews_password: password
+  primary_email: email
   company_domain: str
   timezone: str
+  mode: list(preflight|tunnel)
   tunnel_id: str
   control_plane_api_key: password
